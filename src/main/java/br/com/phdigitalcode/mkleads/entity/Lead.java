@@ -19,7 +19,7 @@ public class Lead implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @OneToOne
-    @JoinColumn(name = "cliente_id")
+    @JoinColumn(unique = true, name = "cliente_id")
     private Cliente cliente;
     @ManyToOne
     @JoinColumn(name = "plataforma_ID")

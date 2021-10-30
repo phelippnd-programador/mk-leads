@@ -10,6 +10,7 @@ public class Telefone implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String ddd;
+    @Column(unique = true)
     private String numero;
 
     public Telefone(String numero) {

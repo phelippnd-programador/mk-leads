@@ -12,8 +12,8 @@ public class Ligacao implements Serializable {
     @GeneratedValue
     private Long id;
     @OneToOne
-    @JoinColumn(name = "cliente_id")
-    private Lead cliente;
+    @JoinColumn(name = "lead_id")
+    private Lead lead;
     @OneToOne
     @JoinColumn(name = "funcionario_id")
     private Funcionario funcionario;

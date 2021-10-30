@@ -1,5 +1,7 @@
 package br.com.phdigitalcode.mkleads.service;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,7 +15,7 @@ import br.com.phdigitalcode.mkleads.entity.Funcionario;
 import br.com.phdigitalcode.mkleads.entity.Lead;
 
 class LeadServiceTest {
-    private String diretorio = "C:/Users/thiar/Documents/LEADS.xlsx";
+    private String diretorio = "C:/Users/thiar/Documents/LEADS_EXTRUTURA.xlsx";
     private List<Lead>leads;
     private List<Funcionario> funcionarios;
     private final LeadService service = new LeadService();
@@ -25,7 +27,8 @@ class LeadServiceTest {
     @Test
     public void teste() throws IOException {
         
-        service.carregar(new File(diretorio));
+        Set carregar = service.carregar(new File(diretorio));
+        assertEquals(6, carregar.size());
     }
     @Test
     public void deve_Retornar3_QuandoInserirUmaListaIgual() {
